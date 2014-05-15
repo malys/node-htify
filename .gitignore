@@ -1,2 +1,2 @@
-bin/builder.js
 node-modules/*
+node_modules/
