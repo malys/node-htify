@@ -1,0 +1,3 @@
+describe('shortify', function () {
+
+});

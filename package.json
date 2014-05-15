@@ -1,0 +1,31 @@
+{
+    "name": "htify",
+    "version": "0.0.1",
+    "author": "Sylvain Malnuit sylvain.malnuit@lyra-network.com",
+    "description": "externalize require definition in _XXXX.js",
+    "keywords": [
+    "alias",
+    "browserify",
+    "transform",
+    "require",
+    "aliasify"
+  ],
+    "engines": {
+        "node": ">=0.10.x",
+        "npm": "1.3.x"
+    },
+    "main": "lib",
+    "dependencies": {
+        "through": "2.3.4"
+    },
+    "devDependencies": {
+        "browserify": "3.33.1",
+        "load-grunt-tasks": "^0.4.0"
+    },
+    "repository": {
+        "url": "git://github.com/bodokaiser/node-shortify"
+    },
+    "bugs": {
+        "url": "https://github.com/bodokaiser/node-shortify/issues"
+    }
+}
