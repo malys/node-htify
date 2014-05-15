@@ -1,13 +1,12 @@
 {
     "name": "htify",
-    "version": "0.0.1",
-    "description": "externalize require definition in _XXXX.js or _default.js",
+    "version": "0.0.2",
+    "description": "Externalize require definition in _XXXX.js or _default.js",
     "keywords": [
-    "alias",
     "browserify",
     "transform",
     "require",
-    "aliasify"
+    "external"
   ],
     "engines": {
         "node": ">=0.10.x",
