@@ -12,14 +12,9 @@ var builder = browserify({
     debug: true
 });
 
-var transform = htify();
+builder.transform(htify).bundle()
+    .on('error', handle).pipe(process.stdout);
 
-builder.transform(transform).bundle()
-    .on('error', handle).pipe(process.stdout);
-/*
-builder.bundle()
-    .on('error', handle).pipe(process.stdout);
-*/
 function handle(error) {
     throw error;
 }
