@@ -51,8 +51,9 @@ With Grunt,
 browserify: {
         src: ['XXXXXXXXX'],
         dest: 'YYYYYYY.js',
-        transform: ['htify']
-
+        options: {
+            transform: ['htify']
+        }  
 }
 ```
 Main motivation was to uncouple existed code source and Browserify framework.
