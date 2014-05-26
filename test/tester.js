@@ -1,6 +1,6 @@
 'use strict'
 
-var htify = require('../lib');
+var htify = require('../index.js');
 var browserify = require('browserify');
 
 var builder = browserify({
