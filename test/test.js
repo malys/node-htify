@@ -6,22 +6,16 @@ var htify = require('../index.js');
 var browserify = require('browserify');
 var logger = require('log4js').getLogger('htify-test');
 var crypto = require('crypto');
-var events = require('events');
 
 function getSha1(data) {
     return crypto.createHash('sha1').update(data).digest('hex');
 }
 
-function assertSha1AreEquals(test, outputFilePath, expected) {
-    logger.debug('assertSha1AreEquals the sha1 of: ' + outputFilePath + ', to be: ' + expected);
+function getActualSha1(parsedDirectoryPath, outputFilePath) {
+    generateHtifiedFile(parsedDirectoryPath, outputFilePath);
 
-    fs.readFile(outputFilePath, function (err, data) {
-        logger.debug('PROUTTT');
-        var actual = getSha1(data);
-        logger.debug('actual: ' + actual);
-        test.equal(actual, expected, 'Sha1 should be equal');
-        assert.equal(actual, expected, 'Sha1 should be equal');
-    });
+    var targetFileContent = fs.readFileSync(outputFilePath);
+    return getSha1(targetFileContent);
 }
 
 function getBuilder(parsedDirectoryPath) {
@@ -41,8 +35,6 @@ function handle(error) {
 
 // Generate a file with the specified path using Browserify and the htify transformation
 function generateHtifiedFile(parsedDirectoryPath, outputFilePath) {
-    logger.debug('generateHtifiedFile in directory: ' + parsedDirectoryPath + ', to the output: ' + outputFilePath);
-
     // use console output if there is no specified output file path
     var writeFileStream = process.output;
     if (outputFilePath) {
@@ -51,30 +43,21 @@ function generateHtifiedFile(parsedDirectoryPath, outputFilePath) {
 
     // create a builder with default js file to browserify
     var builder = getBuilder(parsedDirectoryPath);
-
     builder.transform(htify).bundle()
-        .on('error', handle).pipe(writeFileStream).on('finish', function () {
-            logger.debug('On finish!');
-        });
-
-    writeFileStream.end('ENDED');
-
-    writeFileStream.on('finish', function () {
-        logger.debug('On finish!');
-    });
+        .on('error', handle).pipe(writeFileStream);
+    writeFileStream.end();
 }
 
 exports.testDirectoryWithoutHeader = function (test) {
-    var expected = 'da39a3ee5e6b4b0d3255bfef95601890afd80709';
-    var parsedDirectoryPath = './test/withoutHeader';
-    var outputFilePath = './test/megaResult.txt';
-
     test.expect(1);
+    var parsedDirectoryPath = './test/withoutHeader';
+    var outputFilePath = './test/directoryWithoutHeaderResult.txt';
 
+    // expected sha1 generated with a valid generated file
+    var expected = 'da39a3ee5e6b4b0d3255bfef95601890afd80709';
+    var actual = getActualSha1(parsedDirectoryPath, outputFilePath);
 
-    generateHtifiedFile(parsedDirectoryPath, outputFilePath);
-
-    assertSha1AreEquals(test, outputFilePath, expected);
+    test.equal(actual, expected, 'Sha1 should be equal');
 
     test.done();
 };
