@@ -10,11 +10,15 @@ Install with [npm(1)](http://npmjs.org):
     $ git clone git://github.com/malys/node-htify  
     $ npm install %cd%
 
+## Tests
+
+Run
+
+```
+npm test
+```
+
 ## Examples
-``
- test/tester.js
-``
-or
 
 ```
 var htify = require('htify');
