@@ -10,19 +10,23 @@ Install with [npm(1)](http://npmjs.org):
     $ git clone git://github.com/malys/node-htify  
     $ npm install %cd%
 
+## Tests
+
+Run
+
+```
+npm test
+```
+
 ## Examples
-``
- test/tester.js
-``
-or
 
 ```
 var htify = require('htify');
 
 var builder = browserify({ entries: ['app.js'] });
-var transform = htify();
 
-builder.transform(transform).bundle().pipe(yourwritestream);
+
+builder.transform(htify).bundle().pipe(yourwritestream);
 ```
 
 Then, if '_app.js' or '_default.js' exists, 'htify'' imports automatically this file.
