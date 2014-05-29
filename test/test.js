@@ -74,7 +74,8 @@ function testHtifiedFile(referenceFilePath, targetDir, actualFilePath) {
             getFileDataAsString(actualFilePath, function (actualContent) {
                 // remove the generated file, we don't need it anymore
                 fs.unlink(actualFilePath);
-                process.test.equal(expectedContent, actualContent, 'File content should be equal');
+                // remove \n\r to avoid issue between Window and Linux
+                process.test.equal(expectedContent.replace(/[\n\r]/g, ''), actualContent.replace(/[\n\r]/g, ''), 'File content should be equal');
                 process.exit();
             });
         });
