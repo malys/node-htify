@@ -1,3 +1,0 @@
-describe('htify', function () {
-
-});
