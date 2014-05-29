@@ -81,6 +81,16 @@ function testHtifiedFile(referenceFilePath, targetDir, actualFilePath) {
     });
 }
 
+exports.testDirectoryWithoutHeader = function (test) {
+    test.expect(1);
+    var referenceFilePath = './test/references/withoutHeaderResult.js';
+    var targetDir = './test/withoutHeader/';
+    var actualFilePath = './test/withoutHeaderResult.js';
+    process.test = test;
+    process.exit = test.done;
+    testHtifiedFile(referenceFilePath, targetDir, actualFilePath);
+};
+
 exports.testDirectoryWithOnlyADefaultHeader = function (test) {
     test.expect(1);
     var referenceFilePath = './test/references/onlyADefaultHeaderResult.js';
