@@ -24,9 +24,9 @@ npm test
 var htify = require('htify');
 
 var builder = browserify({ entries: ['app.js'] });
-var transform = htify();
 
-builder.transform(transform).bundle().pipe(yourwritestream);
+
+builder.transform(htify).bundle().pipe(yourwritestream);
 ```
 
 Then, if '_app.js' or '_default.js' exists, 'htify'' imports automatically this file.
