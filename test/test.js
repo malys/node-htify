@@ -90,4 +90,5 @@ exports.testDirectoryWithOnlyADefaultHeader = function (test) {
     process.exit = test.done;
 
     testHtifiedFile(referenceFilePath, targetDir, actualFilePath);
+
 };
