@@ -72,6 +72,8 @@ function testHtifiedFile(referenceFilePath, targetDir, actualFilePath) {
         generateHtifiedFile(targetDir, actualFilePath, function () {
             // htify is applied, get its content to compare with the expected one
             getFileDataAsString(actualFilePath, function (actualContent) {
+                // remove the generated file, we don't need it anymore
+                fs.unlink(actualFilePath);
                 process.test.equal(expectedContent, actualContent, 'File content should be equal');
                 process.exit();
             });
@@ -79,7 +81,7 @@ function testHtifiedFile(referenceFilePath, targetDir, actualFilePath) {
     });
 }
 
-exports.testDirectoryWithOnlyADefaultHeade = function (test) {
+exports.testDirectoryWithOnlyADefaultHeader = function (test) {
     test.expect(1);
     var referenceFilePath = './test/references/onlyADefaultHeaderResult.js';
     var targetDir = './test/onlyADefaultHeader/';
