@@ -1,6 +1,6 @@
 {
     "name": "htify",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "Externalize require definition in _XXXX.js or _default.js",
     "keywords": [
     "browserify",

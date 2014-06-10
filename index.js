@@ -52,8 +52,6 @@ module.exports = function htify(filename) {
         } else if (fs.existsSync(defaultHeaderPath)) {
             logger.info('Associated ' + filename + ' with ' + defaultHeaderPath);
             source = addHeaderDependency(source, defaultHeaderName);
-        } else {
-            logger.info('No configuration file found for ' + filename);
         }
 
         return source;
