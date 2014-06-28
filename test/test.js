@@ -2,7 +2,7 @@
 'use strict';
 
 var fs = require('fs');
-var htify = require('../index.js');
+var htify = require('../lib/index.js');
 var browserify = require('browserify');
 var logger = require('log4js').getLogger('htify-test');
 
