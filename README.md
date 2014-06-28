@@ -1,4 +1,7 @@
-# htify
+# htify [![NPM version](https://badge.fury.io/js/htify.png)](http://badge.fury.io/js/htify)
+[![Build Status](https://travis-ci.org/malys/htify.png)](https://travis-ci.org/malys/htify)
+[![Coverage Status](https://coveralls.io/repos/malys/htify/badge.png?branch=master)](https://coveralls.io/r/malys/htify?branch=master)
+
 
 [browserify](https://github.com/substack/browserify) transform.
 Using htify, we can define 'require' definition in an external code file.
