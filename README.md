@@ -1,6 +1,6 @@
 # htify [![NPM version](https://badge.fury.io/js/htify.png)](http://badge.fury.io/js/htify)
-[![Build Status](https://travis-ci.org/malys/htify.png)](https://travis-ci.org/malys/htify)
-[![Coverage Status](https://coveralls.io/repos/malys/htify/badge.png?branch=master)](https://coveralls.io/r/malys/htify?branch=master)
+[![Build Status](https://travis-ci.org/malys/node-htify.png)](https://travis-ci.org/malys/node-htify)
+[![Coverage Status](https://coveralls.io/repos/malys/node-htify/badge.png)](https://coveralls.io/r/malys/node-htify)
 
 
 [browserify](https://github.com/substack/browserify) transform.
