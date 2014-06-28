@@ -14,7 +14,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "test": "nodeunit test",
+    "test": "nodeunit test"
   },
   "dependencies": {
     "coveralls": "^2.10.1",
