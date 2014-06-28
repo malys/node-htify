@@ -14,7 +14,8 @@
   },
   "main": "index.js",
   "scripts": {
-    "test": "nodeunit test"
+    "test": "nodeunit test",
+	"coveralls": "jscoverage lib && YOURPACKAGE_COVERAGE=1 nodeunit --reporter=lcov test | coveralls"
   },
   "dependencies": {
     "coveralls": "^2.10.1",
