@@ -10,8 +10,7 @@ Using htify, we can define 'require' definition in an external code file.
 
 Install with [npm(1)](http://npmjs.org):
 
-    $ git clone git://github.com/malys/node-htify  
-    $ npm install %cd%
+    $ npm install htify
 
 ## Tests
 
