@@ -2,7 +2,13 @@
 'use strict';
 
 var fs = require('fs');
-var htify = require('../lib/index.js');
+
+if (process.env.HTIFY_COV && process.env.HTIFY_COV == 1) {
+    var htify = require('../lib-cov/index.js');
+
+} else {
+    var htify = require('../lib/index.js');
+}
 var browserify = require('browserify');
 var logger = require('log4js').getLogger('htify-test');
 
