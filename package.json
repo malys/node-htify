@@ -1,32 +1,32 @@
 {
-	"name": "htify",
-	"version": "0.0.7",
-	"description": "Externalize require definition in _XXXX.js or _default.js",
-	"keywords": [
+  "name": "htify",
+  "version": "0.0.7",
+  "description": "Externalize require definition in _XXXX.js or _default.js",
+  "keywords": [
     "browserify",
     "transform",
     "require",
     "external"
   ],
-	"engines": {
-		"node": ">=0.10.x"
-	},
-	"main": "lib/index.js",
-	"scripts": {
-		"test": "nodeunit test",
-		"coveralls": "jscoverage lib && nodeunit --reporter=lcov test|coveralls"
-	},
-	"dependencies": {
-		"coveralls": "^2.10.1",
-		"log4js": "0.6.14",
-		"through": "2.3.4"
-	},
-	"devDependencies": {
-		"browserify": "3.33.1",
-		"jscoverage": "^0.5.4",
-		"nodeunit": "^0.9.0"
-	},
-	"repository": {
-		"url": "git://github.com/malys/node-htify"
-	}
+  "engines": {
+    "node": ">=0.10.x"
+  },
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "nodeunit test",
+    "coveralls": "jscoverage lib && nodeunit --reporter=lcov test|coveralls"
+  },
+  "dependencies": {
+    "coveralls": "^2.10.1",
+    "log4js": "^0.6.38",
+    "through": "^2.3.8"
+  },
+  "devDependencies": {
+    "browserify": "^13.1.1",
+    "jscoverage": "^0.6.0",
+    "nodeunit": "^0.10.2"
+  },
+  "repository": {
+    "url": "git://github.com/malys/node-htify"
+  }
 }
